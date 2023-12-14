@@ -1,4 +1,4 @@
-## NGINX 
+## NGINX
 
 - Pronounciation :Engine X
 - PowerFul Web Server
@@ -16,19 +16,25 @@ docker pull nginx
 ```
 docker run -p 8000:80 nginx
 ```
+
 **Diagram of Normal HTTP Connection**
+
 ```mermaid
    graph LR
     A[Client] -- Normal HTTP Connection --> B[Server]
 ```
+
 **Diagram of HTTP Connection with VPN**
- - Forward Proxy Sever is used to connect to the VPN
+
+- Forward Proxy Sever is used to connect to the VPN
+
 ```mermaid
    graph LR
     A[Client] -- Normal HTTP Connection --> B[Server]
     A <--> C[Forward Proxy Server]
     C <--> B
 ```
+
 ```mermaid
    graph LR
     A[Client 1] <--> B[Forward Proxy :VPN]
@@ -38,10 +44,12 @@ docker run -p 8000:80 nginx
     B<-->F[Server]   
   
 ```
+
 - Server is not able to identify the client in forward proxy server
-   - Forward Proxy Server is used to connect to the VPN
+  - Forward Proxy Server is used to connect to the VPN
 
 **Connection of NGINX**
+
 ```mermaid
    graph LR
     A[Client] -- Normal HTTP Connection --> B[Reverse Proxy S:NGINX]
@@ -49,9 +57,29 @@ docker run -p 8000:80 nginx
     B <--> D[Server 2]
     B <--> E[Server 3]
     B <--> F[Server 4]
-    
+  
 ```
+
 - NGINX is used to connect to the VPN
   - Client is not able to identify the server in NGINX case
 
- 
+```mermaid
+graph LR;
+A[Client 1]<-->B[NGINX]
+C[Client 2]<-->B
+D[Client 3]<-->B
+E[Client 4]<-->B
+F[Client 5]<-->B
+G[Client 6]<-->B
+H[Client 7]<-->B
+B--Request Sending On specific server after decision-->I[Decision Output]
+I-->J[Server 1]
+I-->K[Server 2]
+I-->L[Server 3]
+I-->M[Server 4]
+I-->N[Server 5]
+I-->O[Server 6]
+I-->P[Server 7]
+I-->Q[Server 8]
+
+```
