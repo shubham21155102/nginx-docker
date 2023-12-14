@@ -83,3 +83,24 @@ I-->P[Server 7]
 I-->Q[Server 8]
 
 ```
+
+**More Clearation**
+
+```mermaid
+graph LR;
+A[Client 1]<-->B[NGINX]
+C[Client 2]<-->B
+D[Client 3]<-->B
+E[Client 4]<-->B
+F[Client 5]<-->B
+G[Client 6]<-->B
+H[Client 7]<-->B
+B--/admin-->J[Server 1]
+B--/user-->K[Server 2]
+B--/admin-->L[Server 3]
+B--/settings-->M[Server 4]
+B--/all-->N[Server 5]
+B--/todo-->O[Server 6]
+B--/example-->P[Server 7]
+B--/ex-->Q[Server 8]
+```
