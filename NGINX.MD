@@ -16,9 +16,25 @@ docker pull nginx
 ```
 docker run -p 8000:80 nginx
 ```
+**Diagram of Normal HTTP Connection**
 ```mermaid
 sequenceDiagram
-    Alice->>John: Hello John, how are you?
-    John-->>Alice: Great!
-    Alice-)John: See you later!
+    Client->>Server: Normal HTTP Connection
+```
+**Diagram of HTTP Connection with VPN**
+ - Forward Proxy Sever is used to connect to the VPN
+```mermaid
+   graph LR
+    A[Client] -- Normal HTTP Connection --> B[Server]
+    A --> C[Forward Proxy Server]
+    C --> B
+```
+```mermaid
+   graph LR
+    A[Client 1] --> B[Forward Proxy Server:VPN]
+    C[Client 2]--> B
+    D[Client 3]--> B
+    E[Client 4]-->B
+    B-->F[Server]   
+  
 ```
