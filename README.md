@@ -214,7 +214,6 @@ http{
 
 ```
 
-
 ```
 events {
 
@@ -355,4 +354,57 @@ http{
 }
 
 
+```
+
+## Firewall setup
+
+```
+sudo ufw enable
+sudo ufw status
+sudo ufw allow ssh (Port 22)
+sudo ufw allow http (Port 80)
+sudo ufw allow https (Port 443)
+```
+
+## Install NGINX and configure
+
+```
+sudo apt install nginx
+
+sudo nano /etc/nginx/sites-available/default
+```
+
+## Next Step
+
+```
+ server_name shubham.shubhamiitbhu.in www.shubham.shubhamiitbhu.in;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+```
+
+```
+# Check NGINX config
+sudo nginx -t
+
+# Restart NGINX
+sudo nginx -s reload
+```
+
+## Add SSL with LetsEncrypt
+
+```
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install python3-certbot-nginx
+sudo certbot --nginx -d shubham.shubhamiitbhu.in -d www.shubham.shubhamiitbhu.in
+
+# Only valid for 90 days, test the renewal process with
+certbot renew --dry-run
 ```
