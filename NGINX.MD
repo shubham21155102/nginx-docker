@@ -3,7 +3,7 @@
 - Pronounciation :Engine X
 - PowerFul Web Server
 - Uses non-threaded and event driven structure
-- Used as
+- Used as a reverse proxy server, load balancer, mail proxy server, and HTTP cache
 
 **Installation using Docker**
 
