@@ -1,4 +1,5 @@
-# nginx-docker
+# Nginx-Docker
+
 ## NGINX
 
 - Pronounciation :Engine X
@@ -105,3 +106,13 @@ B--/todo-->O[Server 6]
 B--/example-->P[Server 7]
 B--/ex-->Q[Server 8]
 ```
+
+## Contributions
+
+- Can Handle 10000 Concurrent Requests
+- Catche HTTP Requests
+- Act as Reverse Proxy
+- Act as Load Balancer
+- Act as an API Gateway(see upper example)
+- Serve and Cache Static files like images ,videos etc.
+- Handle SSL Certificates
