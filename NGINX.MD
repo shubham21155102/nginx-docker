@@ -31,7 +31,7 @@ docker run -p 8000:80 nginx
 ```
 ```mermaid
    graph LR
-    A[Client 1] <--> B[Forward Proxy Server:VPN]
+    A[Client 1] <--> B[Forward Proxy :VPN]
     C[Client 2]<--> B
     D[Client 3]<--> B
     E[Client 4]<-->B
@@ -44,7 +44,7 @@ docker run -p 8000:80 nginx
 **Connection of NGINX**
 ```mermaid
    graph LR
-    A[Client] -- Normal HTTP Connection --> B[NGINX]
+    A[Client] -- Normal HTTP Connection --> B[Reverse Proxy S:NGINX]
     B <--> C[Server 1]
     B <--> D[Server 2]
     B <--> E[Server 3]
