@@ -116,3 +116,73 @@ B--/ex-->Q[Server 8]
 - Act as an API Gateway(see upper example)
 - Serve and Cache Static files like images ,videos etc.
 - Handle SSL Certificates
+
+## Codes
+
+```
+docker run -it -p 8080:80 ubuntu
+```
+
+```
+apt-get update
+```
+
+```
+apt-get install nginx
+```
+
+```
+cd /etc/
+```
+
+```
+ls
+```
+
+```
+cd nginx/
+```
+
+```
+ls
+```
+
+```
+cat nginx.conf
+```
+
+```
+apt-get install vim
+```
+
+```
+touch nginx.conf
+```
+
+```
+events {
+
+
+}
+
+http{
+        server{
+             listen 80;
+             server_name _;
+             location /{
+                     return 200 "Return from Shubham NGINX MACHINE";
+             }
+       }
+
+
+}
+
+```
+
+- i for write
+- ctrc+c then
+- :wq Enter
+
+```
+nginx -s reload
+```
